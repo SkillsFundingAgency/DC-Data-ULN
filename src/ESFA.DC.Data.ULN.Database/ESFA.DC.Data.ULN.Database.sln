@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ESFA.DC.Data.ULN.Database", "ESFA.DC.Data.ULN.Database.sqlproj", "{4919E882-642D-4123-B2E0-7CF98BAFD5B7}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ESFA.DC.Data.ULN.SSIS", "..\ESFA.DC.Data.ULN.SSIS\ESFA.DC.Data.ULN.SSIS.dtproj", "{F6C79743-E387-41F7-8B10-C59A521FF062}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4919E882-642D-4123-B2E0-7CF98BAFD5B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Debug|Any CPU.ActiveCfg = Development
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Debug|Any CPU.Build.0 = Development
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Development|Any CPU.ActiveCfg = Development
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Development|Any CPU.Build.0 = Development
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Release|Any CPU.ActiveCfg = Development
+		{F6C79743-E387-41F7-8B10-C59A521FF062}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {798AA782-D597-4B07-8402-B2178E27EDFC}
+	EndGlobalSection
+EndGlobal
