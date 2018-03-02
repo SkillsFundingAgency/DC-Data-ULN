@@ -3,16 +3,17 @@
   DTS:refId="Package"
   DTS:CreationDate="3/2/2018 10:29:51 AM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="PJC-DEV"
-  DTS:CreatorName="PJC-Dev\DevUser"
+  DTS:CreatorComputerName="Not Set"
+  DTS:CreatorName="Not Set"
   DTS:DTSID="{3CA00B87-ACFE-4CCD-8A00-FF9B77CB4AC0}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Load ULN Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{B84EEB6A-4E40-49DD-B09B-1C67485AB9B9}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{0DE40E92-1CBF-4D09-895B-624043E4F5C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -687,7 +688,7 @@
                 DTS:Name="SqlStatementSource">@[User::SqlCommand]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{3952AF65-B892-4E5D-A9B3-9CBF9C167DE9}"
+                  SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
                   SQLTask:SqlStatementSource="DELETE FROM [Staging].[UniqueLearnerNumbers];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -728,7 +729,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{09CA5FEC-B2D2-41DC-A907-A025D05088DA}"
+              SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
               SQLTask:SqlStatementSource="EXEC [Staging].[usp_ProcessULNs]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -745,7 +746,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{09CA5FEC-B2D2-41DC-A907-A025D05088DA}"
+              SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
               SQLTask:SqlStatementSource="EXEC [Staging].[usp_RemovedProcessedRecords]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -824,7 +825,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="322,203"
+          PanelSize="322,204"
           Size="322,247"
           Id="Package\SEQ - Load Data To Staging Area"
           TopLeft="41,79.5714285714286" />
