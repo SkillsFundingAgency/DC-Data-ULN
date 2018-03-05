@@ -4,7 +4,7 @@ AS
 /*
 -------------------------------------------------------------------------------------- 
 	 Example Call - 
-			EXEC [dbo].[usp_Set_DataExchangeJobValues] @JobId==1, @Item='Some Value Here'
+			EXEC [Staging].[usp_ProcessULNs]
  */
 -------------------------------------------------------------------------------------- 
 BEGIN
