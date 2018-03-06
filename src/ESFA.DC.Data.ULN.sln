@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ESFA.DC.Data.ULN.Database", "ESFA.DC.Data.ULN.Database\ESFA.DC.Data.ULN.Database.sqlproj", "{4919E882-642D-4123-B2E0-7CF98BAFD5B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Data.ULN.Model", "..\ESFA.DC.Data.ULN.Model\ESFA.DC.Data.ULN.Model.csproj", "{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Data.ULN.Model", "ESFA.DC.Data.ULN.Model\ESFA.DC.Data.ULN.Model.csproj", "{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

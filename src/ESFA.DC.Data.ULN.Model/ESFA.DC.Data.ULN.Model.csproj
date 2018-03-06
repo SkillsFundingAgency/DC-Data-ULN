@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="ESFA.DC.Data.ULN.Model.nuspec" />
     <None Include="packages.config" />
     <None Include="ULN.edmx.diagram">
       <DependentUpon>ULN.edmx</DependentUpon>

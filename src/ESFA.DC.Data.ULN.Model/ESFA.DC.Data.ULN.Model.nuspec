@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ESFA.DC.Data.ULN.Model</id>
+    <version>0.1.0</version>
+    <authors>DC</authors>
+    <owners>ESFA</owners>
+    <licenseUrl>https://github.com/SkillsFundingAgency/DC-Data-ULN/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SkillsFundingAgency/DC-Data-ULN</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ULN Entity Framework Model Project.</description>
+    <releaseNotes />
+    <copyright>Copyright 2018</copyright>
+    <tags>ILR ULN Data Database Model</tags>
+  </metadata>
+</package>
