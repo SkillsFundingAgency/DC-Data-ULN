@@ -12,8 +12,9 @@ namespace ESFA.DC.Data.ULN.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using ESFA.DC.Data.ULN.Model.Interfaces;
     
-    public partial class ULN : DbContext
+    public partial class ULN : DbContext, IULN
     {
         public ULN()
             : base("name=ULN")
