@@ -85,16 +85,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ULN.Context.tt">
+    <None Include="ULN.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ULN.Context.cs</LastGenOutput>
       <DependentUpon>ULN.edmx</DependentUpon>
-    </Content>
-    <Content Include="ULN.tt">
+    </None>
+    <None Include="ULN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ULN.edmx</DependentUpon>
       <LastGenOutput>ULN.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
