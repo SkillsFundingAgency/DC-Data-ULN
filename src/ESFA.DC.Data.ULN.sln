@@ -7,6 +7,11 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ESFA.DC.Data.ULN.Database",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Data.ULN.Model", "ESFA.DC.Data.ULN.Model\ESFA.DC.Data.ULN.Model.csproj", "{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97F0C2FE-3A85-4EFF-B784-E993B2919AFD}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
