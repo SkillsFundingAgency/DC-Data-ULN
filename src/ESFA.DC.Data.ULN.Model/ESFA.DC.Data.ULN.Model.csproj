@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ULN.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ULNConstructor.cs" />
     <Compile Include="UniqueLearnerNumber.cs">
       <DependentUpon>ULN.tt</DependentUpon>
     </Compile>
