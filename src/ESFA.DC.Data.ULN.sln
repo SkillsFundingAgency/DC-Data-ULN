@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ESFA.DC.Data.ULN.SSIS", "ESFA.DC.Data.ULN.SSIS\ESFA.DC.Data.ULN.SSIS.dtproj", "{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,12 +34,6 @@ Global
 		{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8FCE04A-B3B6-4336-A0DC-796C9AB90F3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Debug|Any CPU.ActiveCfg = Development
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Debug|Any CPU.Build.0 = Development
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Development|Any CPU.ActiveCfg = Development
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Development|Any CPU.Build.0 = Development
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Release|Any CPU.ActiveCfg = Development
-		{4885B9AB-3FB0-435E-90EE-4B78F6B1E15E}.Release|Any CPU.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
