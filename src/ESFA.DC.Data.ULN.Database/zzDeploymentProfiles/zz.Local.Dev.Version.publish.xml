@@ -4,9 +4,26 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>ULN</TargetDatabaseName>
     <DeployScriptFileName>ESFA.DC.Data.ULN.Database.sql</DeployScriptFileName>
-    <TargetConnectionString>Data Source=.\sql2017;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <TargetConnectionString>Data Source=(local);Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
     <BlockWhenDriftDetected>False</BlockWhenDriftDetected>
     <RegisterDataTierApplication>True</RegisterDataTierApplication>
   </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="ULNROUserPwd">
+      <Value>NotUsedLocally!</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="ULNRWUserPwd">
+      <Value>NotUsedLocally!!</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="DEPLOYMENT_DATETIME">
+      <Value>1900-01-01 00:00:00Z</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="BUILD_BUILDNUMBER">
+      <Value>X.Y.Z-LocalDev</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="BUILD_BRANCHNAME">
+      <Value>Local Machine</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
 </Project>

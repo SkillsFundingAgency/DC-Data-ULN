@@ -1,0 +1,7 @@
+﻿CREATE USER [ULN_RW_User]
+    WITH PASSWORD = N'$(ULNRWUserPwd)';
+GO
+	GRANT CONNECT TO [ULN_RW_User]
+GO
+
+
