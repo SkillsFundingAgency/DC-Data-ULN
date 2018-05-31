@@ -11,10 +11,10 @@
   </PropertyGroup>
   <ItemGroup>
     <SqlCmdVariable Include="ULNROUserPwd">
-      <Value>__ULN_RO_User__</Value>
+      <Value>__ULNROUSERNAME__</Value>
     </SqlCmdVariable>
     <SqlCmdVariable Include="ULNRWUserPwd">
-      <Value>__ULN_RW_User__</Value>
+      <Value>__ULNRWUSERNAME__</Value>
     </SqlCmdVariable>
     <SqlCmdVariable Include="BUILD_BUILDNUMBER">
       <Value>__BUILD_BUILDNUMBER__</Value>
