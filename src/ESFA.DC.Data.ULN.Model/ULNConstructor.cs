@@ -5,6 +5,7 @@
         public ULN(string connectionString)
             : base(connectionString)
         {
+            this.Database.CommandTimeout = 180;
         }
     }
 }
