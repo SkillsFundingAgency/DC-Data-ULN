@@ -10,8 +10,9 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-
+SET NOCOUNT ON;
 GO
+
 RAISERROR('		   Extended Property',10,1) WITH NOWAIT;
 GO
 
