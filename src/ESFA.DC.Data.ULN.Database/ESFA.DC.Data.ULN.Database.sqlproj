@@ -91,6 +91,11 @@
       <DefaultValue>0.0.0</DefaultValue>
       <Value>$(SqlCmdVar__3)</Value>
     </SqlCmdVariable>
+    <SqlCmdVariable Include="RELEASE_RELEASENAME">
+      <DefaultValue>
+      </DefaultValue>
+      <Value>$(SqlCmdVar__5)</Value>
+    </SqlCmdVariable>
     <SqlCmdVariable Include="ROUserPassword">
       <DefaultValue>
       </DefaultValue>
