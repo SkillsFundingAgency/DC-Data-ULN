@@ -19,6 +19,7 @@ namespace ESFA.DC.Data.ULN.Model
         public ULN()
             : base("name=ULN")
         {
+    		this.Database.CommandTimeout = 180;		
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
