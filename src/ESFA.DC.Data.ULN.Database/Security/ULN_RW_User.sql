@@ -1,5 +1,5 @@
 ﻿CREATE USER [ULN_RW_User]
-    WITH PASSWORD = N'$(ULNRWUserPwd)';
+    WITH PASSWORD = N'$(ROUserPassword)';
 GO
 	GRANT CONNECT TO [ULN_RW_User]
 GO

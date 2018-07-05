@@ -92,16 +92,12 @@
       <DefaultValue>0.0.0</DefaultValue>
       <Value>$(SqlCmdVar__3)</Value>
     </SqlCmdVariable>
-    <SqlCmdVariable Include="DEPLOYMENT_DATETIME">
-      <DefaultValue>1900-01-01 00:00:00Z</DefaultValue>
-      <Value>$(SqlCmdVar__5)</Value>
-    </SqlCmdVariable>
-    <SqlCmdVariable Include="ULNROUserPwd">
+    <SqlCmdVariable Include="ROUserPassword">
       <DefaultValue>
       </DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
-    <SqlCmdVariable Include="ULNRWUserPwd">
+    <SqlCmdVariable Include="RWUserPassword">
       <DefaultValue>
       </DefaultValue>
       <Value>$(SqlCmdVar__2)</Value>

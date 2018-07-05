@@ -10,17 +10,14 @@
     <RegisterDataTierApplication>True</RegisterDataTierApplication>
   </PropertyGroup>
   <ItemGroup>
-    <SqlCmdVariable Include="ULNROUserPwd">
+    <SqlCmdVariable Include="ROUserPassword">
       <Value>__ULNROUSERNAME__</Value>
     </SqlCmdVariable>
-    <SqlCmdVariable Include="ULNRWUserPwd">
+    <SqlCmdVariable Include="RWUserPassword">
       <Value>__ULNRWUSERNAME__</Value>
     </SqlCmdVariable>
     <SqlCmdVariable Include="BUILD_BUILDNUMBER">
       <Value>__BUILD_BUILDNUMBER__</Value>
-    </SqlCmdVariable>
-    <SqlCmdVariable Include="DEPLOYMENT_DATETIME">
-      <Value>__RELEASE_DEPLOYMENT_STARTTIME__</Value>
     </SqlCmdVariable>
     <SqlCmdVariable Include="BUILD_BRANCHNAME">
       <Value>__BUILD_SOURCEBRANCHNAME__</Value>

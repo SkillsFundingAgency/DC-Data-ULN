@@ -37,7 +37,14 @@ ELSE
 
 
 GO
-PRINT N'Update complete.';
+RAISERROR('		   Extended Property - Compelete',10,1) WITH NOWAIT;
 
+GO
+RAISERROR('		   Update User Account Passwords',10,1) WITH NOWAIT;
+GO
+ALTER USER [ULN_RO_User] WITH PASSWORD = N'$(ROUserPassword)';
+ALTER USER [ULN_RW_User] WITH PASSWORD = N'$(RWUserPassword)';
 
+GO
+RAISERROR('		   Update User Account Passwords Update Complete',10,1) WITH NOWAIT;
 GO
