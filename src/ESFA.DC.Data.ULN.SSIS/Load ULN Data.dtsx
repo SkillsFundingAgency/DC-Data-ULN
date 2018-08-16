@@ -12,8 +12,8 @@
   DTS:ObjectName="Load ULN Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{0DE40E92-1CBF-4D09-895B-624043E4F5C7}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{94DE8B9D-C09C-47B3-B3FE-E1E36B3D7D99}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,47 +23,33 @@
       DTS:DTSID="{432589FA-3A5B-4C46-A135-21E091073391}"
       DTS:ObjectName="Source Connection Manager">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::SourceConnectionManagerConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::SourceConnectionManager_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.\sql2017;Initial Catalog=ULN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Target Connection Manager]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
+      DTS:DTSID="{e04dea5c-1fd8-4ad5-aa8b-ce46e14de939}"
       DTS:ObjectName="Target Connection Manager">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Package::TargetConnectionManagerConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::TargetConnectionManager_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=.\sql2017;Initial Catalog=ULN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:PackageParameters>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{17F7BFFD-D8AA-41E7-8F04-7C4FC7622076}"
-      DTS:ObjectName="SourceConnectionManagerConnectionString"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=.\sql2017;Initial Catalog=ULN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{B597D3D2-FEBA-43DE-8CBB-714B1103CC9D}"
-      DTS:ObjectName="TargetConnectionManagerConnectionString"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">Data Source=.\sql2017;Initial Catalog=ULN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</DTS:Property>
-    </DTS:PackageParameter>
-  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -688,7 +674,7 @@
                 DTS:Name="SqlStatementSource">@[User::SqlCommand]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
-                  SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
+                  SQLTask:Connection="{e04dea5c-1fd8-4ad5-aa8b-ce46e14de939}"
                   SQLTask:SqlStatementSource="DELETE FROM [Staging].[UniqueLearnerNumbers];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -710,6 +696,7 @@
       DTS:refId="Package\SEQ - Process Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{FE9313E7-CC18-4786-B5DE-73FFE5B3F07A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -729,7 +716,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
+              SQLTask:Connection="{e04dea5c-1fd8-4ad5-aa8b-ce46e14de939}"
               SQLTask:SqlStatementSource="EXEC [Staging].[usp_ProcessULNs]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -746,7 +733,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{EC5D4ECF-9BEE-498C-A143-8CD2213C3CF3}"
+              SQLTask:Connection="{e04dea5c-1fd8-4ad5-aa8b-ce46e14de939}"
               SQLTask:SqlStatementSource="EXEC [Staging].[usp_RemovedProcessedRecords]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
