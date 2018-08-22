@@ -13,6 +13,10 @@ Post-Deployment Script Template
 SET NOCOUNT ON;
 GO
 
+RAISERROR('		   Remove Old Objects',10,1) WITH NOWAIT;
+DROP PROCEDURE IF EXISTS [Staging].[usp_ProcessULNs]
+GO
+
 RAISERROR('		   Extended Property',10,1) WITH NOWAIT;
 GO
 

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [Staging].[usp_ProcessULNs]
+﻿CREATE PROCEDURE [Staging].[usp_Process]
 -- WITH ENCRYPTION
 AS
 /*
@@ -67,3 +67,8 @@ BEGIN
 -------------------------------------------------------------------------------------- 
 -- 
 END
+
+
+GO
+GRANT EXECUTE ON [Staging].[usp_Process] TO [ULN_RW_User]
+GO

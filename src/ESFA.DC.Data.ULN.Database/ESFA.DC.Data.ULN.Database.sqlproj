@@ -74,7 +74,7 @@
     <Build Include="Staging\Tables\UniqueLearnerNumbers.sql" />
     <Build Include="Security\Staging.sql" />
     <Build Include="Staging\Stored Procedures\usp_RemovedProcessedRecords.sql" />
-    <Build Include="Staging\Stored Procedures\usp_ProcessULNs.sql" />
+    <Build Include="Staging\Stored Procedures\usp_Process.sql" />
     <Build Include="Security\RoleMemberships.sql" />
     <Build Include="Security\ULN_RW_User.sql" />
     <Build Include="Security\ULN_RO_User.sql" />
@@ -109,5 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="zzz.Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ESFA.DC.Data.ULN.Database.refactorlog" />
   </ItemGroup>
 </Project>

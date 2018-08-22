@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b0221db9-1146-45f1-9c0b-20239e2461bf" ChangeDateTime="08/22/2018 11:12:07">
+    <Property Name="ElementName" Value="[Staging].[usp_ProcessULNs]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[Staging]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[usp_Process]" />
+  </Operation>
+</Operations>

@@ -10,5 +10,6 @@
     CONSTRAINT [PK_Staging_UniqueLearnerNumbers] PRIMARY KEY CLUSTERED ([ULN] ASC, [LoadTime] ASC)
 );
 
-
-
+GO
+GRANT ALTER ON OBJECT::Staging.UniqueLearnerNumbers TO [ULN_RW_User];
+GO
