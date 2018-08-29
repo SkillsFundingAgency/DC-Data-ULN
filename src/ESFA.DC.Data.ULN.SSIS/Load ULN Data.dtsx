@@ -12,8 +12,8 @@
   DTS:ObjectName="Load ULN Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{62DA09F6-4050-47EE-97C7-DEC9611D77C6}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{CF8716D5-764E-4B52-B56D-878DB9080C14}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::AppLogConnectionString_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+        <DTS:ConnectionManager />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,12 +36,7 @@
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::SourceConnectionManager_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+        <DTS:ConnectionManager />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -57,12 +47,7 @@
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[$Project::TargetConnectionManager_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+        <DTS:ConnectionManager />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -164,6 +149,7 @@
                 DTS:Name="Name">LTRIM(RTRIM("DFT - " + @[User::Name]))</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <pipeline
+                  autoAdjustBufferSize="true"
                   version="1">
                   <components>
                     <component
@@ -253,6 +239,96 @@
                                   description="Derived Column Friendly Expression"
                                   expressionType="Notify"
                                   name="FriendlyExpression">GETUTCDATE()</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedOn]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedOn]"
+                              name="CreatedOn"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[GETUTCDATE]()</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">GETUTCDATE()</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="11"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]"
+                              name="CreatedBy"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">"SSIS Loader"</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">"SSIS Loader"</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedOn]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedOn]"
+                              name="ModifiedOn"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[GETUTCDATE]()</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">GETUTCDATE()</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedBy]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="11"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedBy]"
+                              name="ModifiedBy"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">"SSIS Loader"</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">"SSIS Loader"</property>
                               </properties>
                             </outputColumn>
                           </outputColumns>
@@ -345,44 +421,6 @@
                           name="OLE DB Source Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_On]"
-                              dataType="dbTimeStamp"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Created_On]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_On]"
-                              name="Created_On"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_By]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Created_By]"
-                              length="256"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_By]"
-                              name="Created_By"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_On]"
-                              dataType="dbTimeStamp"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Modified_On]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_On]"
-                              name="Modified_On"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_By]"
-                              dataType="wstr"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Modified_By]"
-                              length="256"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_By]"
-                              name="Modified_By"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[ULN]"
                               dataType="i8"
                               errorOrTruncationOperation="Conversion"
@@ -395,26 +433,9 @@
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Created_On]"
-                              dataType="dbTimeStamp"
-                              name="Created_On" />
-                            <externalMetadataColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Created_By]"
-                              dataType="wstr"
-                              length="256"
-                              name="Created_By" />
-                            <externalMetadataColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Modified_On]"
-                              dataType="dbTimeStamp"
-                              name="Modified_On" />
-                            <externalMetadataColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[Modified_By]"
-                              dataType="wstr"
-                              length="256"
-                              name="Modified_By" />
-                            <externalMetadataColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].ExternalColumns[ULN]"
-                              dataType="i8"
+                              dataType="wstr"
+                              length="10"
                               name="ULN" />
                           </externalMetadataColumns>
                         </output>
@@ -425,31 +446,10 @@
                           <outputColumns>
                             <outputColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[ULN]"
-                              dataType="i8"
+                              dataType="wstr"
+                              length="10"
                               lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[ULN]"
                               name="ULN" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Created_On]"
-                              dataType="dbTimeStamp"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Created_On]"
-                              name="Created_On" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Created_By]"
-                              dataType="wstr"
-                              length="256"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Created_By]"
-                              name="Created_By" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Modified_On]"
-                              dataType="dbTimeStamp"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Modified_On]"
-                              name="Modified_On" />
-                            <outputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Modified_By]"
-                              dataType="wstr"
-                              length="256"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[Modified_By]"
-                              name="Modified_By" />
                             <outputColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
@@ -540,32 +540,6 @@
                           name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Created_On]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Created_On"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Created_On]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_On]" />
-                            <inputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Created_By]"
-                              cachedDataType="wstr"
-                              cachedLength="256"
-                              cachedName="Created_By"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Created_By]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Created_By]" />
-                            <inputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Modified_On]"
-                              cachedDataType="dbTimeStamp"
-                              cachedName="Modified_On"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Modified_On]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_On]" />
-                            <inputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Modified_By]"
-                              cachedDataType="wstr"
-                              cachedLength="256"
-                              cachedName="Modified_By"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Modified_By]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Source Data.Outputs[OLE DB Source Output].Columns[Modified_By]" />
-                            <inputColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[ULN]"
                               cachedDataType="i8"
                               cachedName="ULN"
@@ -578,17 +552,43 @@
                               externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[IsDelete]"
                               lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[IsDelete]" />
                             <inputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Processed]"
+                              cachedDataType="bool"
+                              cachedName="Processed"
+                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Processed]"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[Processed]" />
+                            <inputColumn
                               refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[LoadTime]"
                               cachedDataType="dbTimeStamp"
                               cachedName="LoadTime"
                               externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[LoadTime]"
                               lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[LoadTime]" />
                             <inputColumn
-                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[Processed]"
-                              cachedDataType="bool"
-                              cachedName="Processed"
-                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Processed]"
-                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[Processed]" />
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[CreatedOn]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="CreatedOn"
+                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Created_On]"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedOn]" />
+                            <inputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[CreatedBy]"
+                              cachedDataType="wstr"
+                              cachedLength="11"
+                              cachedName="CreatedBy"
+                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Created_By]"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]" />
+                            <inputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[ModifiedOn]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="ModifiedOn"
+                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Modified_On]"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedOn]" />
+                            <inputColumn
+                              refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].Columns[ModifiedBy]"
+                              cachedDataType="wstr"
+                              cachedLength="11"
+                              cachedName="ModifiedBy"
+                              externalMetadataColumnId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data.Inputs[OLE DB Destination Input].ExternalColumns[Modified_By]"
+                              lineageId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Derived Column.Outputs[Derived Column Output].Columns[ModifiedBy]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -671,13 +671,13 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Delete from - UniqueLearnerNumbers"
+              DTS:refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Create Table - UniqueLearnerNumbers"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{75FACDA0-2786-45BB-ABC0-8D0755CF474A}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
-              DTS:ObjectName="SQL - Delete from - UniqueLearnerNumbers"
+              DTS:ObjectName="SQL - Create Table - UniqueLearnerNumbers"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
               DTS:ThreadHint="0">
               <DTS:Variables>
@@ -694,11 +694,11 @@
                 </DTS:Variable>
               </DTS:Variables>
               <DTS:PropertyExpression
-                DTS:Name="Name">LTRIM(RTRIM("SQL - Delete from - " + @[User::Name]))</DTS:PropertyExpression>
+                DTS:Name="Name">LTRIM(RTRIM("SQL - Create Table - " + @[User::Name]))</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{e04dea5c-1fd8-4ad5-aa8b-ce46e14de939}"
-                  SQLTask:SqlStatementSource="TRUNCATE TABLE [Staging].[UniqueLearnerNumbers];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="DELETE FROM [Staging].[UniqueLearnerNumbers];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -707,7 +707,7 @@
               DTS:refId="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
               DTS:DTSID="{4DE6BDEE-44A3-479F-868B-72A02CA1585F}"
-              DTS:From="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Delete from - UniqueLearnerNumbers"
+              DTS:From="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Create Table - UniqueLearnerNumbers"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
               DTS:To="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers" />
@@ -975,7 +975,7 @@ SELECT
           TopLeft="5.5,75" />
         <NodeLayout
           Size="280,42"
-          Id="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Delete from - UniqueLearnerNumbers"
+          Id="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\SQL - Create Table - UniqueLearnerNumbers"
           TopLeft="5.5,8" />
         <EdgeLayout
           Id="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers.PrecedenceConstraints[Constraint]"
@@ -1181,7 +1181,7 @@ SELECT
     design-time-name="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="135,42"
           Id="Package\SEQ - Load Data To Staging Area\SEQ - UniqueLearnerNumbers\DFT - UniqueLearnerNumbers\Target Data"
@@ -1213,9 +1213,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1237,9 +1235,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
